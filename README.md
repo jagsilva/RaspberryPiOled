@@ -13,26 +13,37 @@ Criar o "virtual enviroment"
 
 Ativar o "virtual enviroment"
 
+```
   source RPI-OLED-SH1106
+```
 
 Instalar o lib do oled
 
+```
   pip3 install --upgrade luma.oled
+```
 
 Ativar o I2C para o utilizador, neste caso pi
 
+```
   sudo usermod -a -G spi,gpio,i2c pi
+```
 
 Aceder à pasta do venv
 
+```
   cd RPI-OLD-SH1106
+```
 
 Criar um exemplo para o oled
 
+```
   sudo nano olaMundo.py
+```
 
 Conteudo do ficheiro:
 
+```
 from luma.core.interface.serial import i2c, spi, pcf8574
 from luma.core.interface.parallel import bitbang_6800
 from luma.core.render import canvas
@@ -53,3 +64,4 @@ with canvas(device) as draw:
 # não terminar o script senão o display limpa e apaga
 while(1):
 	a=0
+```
