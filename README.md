@@ -41,27 +41,27 @@ dtparam=i2c_arm=on,i2c_arm_baudrate=400000
 python3 -m venv RPI-OLED-SH1106
 ```
 
-Ativar o "virtual enviroment"
+### Ativar o "virtual enviroment"
 ```
 source RPI-OLED-SH1106/bin/activate
 ```
 
-Instalar o lib do oled
+### Instalar o lib do oled
 ```
 pip3 install --upgrade luma.oled
 ```
 
-Ativar o I2C para o utilizador, neste caso pi
+### Ativar o I2C para o utilizador, neste caso pi
 ```
 sudo usermod -a -G spi,gpio,i2c pi
 ```
 
-Aceder à pasta do venv
+### Aceder à pasta do venv
 ```
 cd RPI-OLED-SH1106
 ```
 
-Criar um exemplo para o oled
+### Criar um exemplo para o oled
 ```
 sudo nano olaMundo.py
 ```
