@@ -26,7 +26,7 @@ e alterar esta linha
 ```
 ```
 
-por esta ``` ```
+por esta ``` dtparam=i2c_arm=on,i2c_arm_baudrate=400000 ```
 
 Criar o "virtual enviroment"
 ```
