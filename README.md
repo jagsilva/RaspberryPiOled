@@ -5,45 +5,47 @@ Realizado a 20.07.2024 com RPI4 de 4GB e Raspbian OS 64
 
 [https://luma-oled.readthedocs.io/en/latest/intro.html]
 
+Descubrir se o display é detetado
+```
+i2cdetect -y 1
+```
+
+Velocidade da porta I2C
+```
+sudo nano /boot/firmware/config.txt
+```
 
 Criar o "virtual enviroment"
-
 ```
   python3 -m venv RPI-OLED-SH1106
 ```
 
 Ativar o "virtual enviroment"
-
 ```
   source RPI-OLED-SH1106
 ```
 
 Instalar o lib do oled
-
 ```
   pip3 install --upgrade luma.oled
 ```
 
 Ativar o I2C para o utilizador, neste caso pi
-
 ```
   sudo usermod -a -G spi,gpio,i2c pi
 ```
 
 Aceder à pasta do venv
-
 ```
   cd RPI-OLD-SH1106
 ```
 
 Criar um exemplo para o oled
-
 ```
   sudo nano olaMundo.py
 ```
 
 Conteudo do ficheiro:
-
 ```
 from luma.core.interface.serial import i2c, spi, pcf8574
 from luma.core.interface.parallel import bitbang_6800
