@@ -90,6 +90,12 @@ while(1):
 	a=0
 ```
 
+Executar o script com:
+```
+sudo python3 olaMundo.py
+```
+
+
 Links uteis:  
 Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a-primer/]  
 Luma Oled Lib: [https://luma-oled.readthedocs.io/en/latest/intro.html]
