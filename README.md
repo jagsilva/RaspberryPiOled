@@ -1,9 +1,12 @@
-# RaspberryPiOled
+# Raspberry Pi 4 com Oled SH1106
 
 ## Experiencias com o OLED SH1106 no raspberry pi!
 Realizado a 20.07.2024 com RPI4 de 4GB e Raspbian OS 64
 
-[https://luma-oled.readthedocs.io/en/latest/intro.html]
+Links uteis:
+Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a-primer/]
+Luma Oled Lib: [https://luma-oled.readthedocs.io/en/latest/intro.html]
+
 
 Descubrir se o display é detetado
 ```
