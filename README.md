@@ -58,7 +58,7 @@ sudo usermod -a -G spi,gpio,i2c pi
 
 Aceder à pasta do venv
 ```
-cd RPI-OLD-SH1106
+cd RPI-OLED-SH1106
 ```
 
 Criar um exemplo para o oled
