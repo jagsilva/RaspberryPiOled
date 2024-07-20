@@ -4,8 +4,7 @@
 Realizado a 20.07.2024 com RPI4 de 4GB e Raspbian OS (64-BIT)
 
 Links uteis:
-Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a-primer/]
-</br>
+Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a-primer/]  
 Luma Oled Lib: [https://luma-oled.readthedocs.io/en/latest/intro.html]
 
 
