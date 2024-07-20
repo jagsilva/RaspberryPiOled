@@ -8,7 +8,7 @@ Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a
 Luma Oled Lib: [https://luma-oled.readthedocs.io/en/latest/intro.html]
 
 
-![Esquema de ligações do display ao Raspberry pi 4]([https://exemplo.com/logo.png](https://github.com/jagsilva/RaspberryPiOled/blob/main/i2c_oled_128x64_raspberry_pi_wiring.png?raw=true))
+![Esquema de ligações do display ao Raspberry pi 4](https://github.com/jagsilva/RaspberryPiOled/blob/main/i2c_oled_128x64_raspberry_pi_wiring.png?raw=true)
 
 Ativar a ligação I2C: na consola com "sudo raspi-config".
 
