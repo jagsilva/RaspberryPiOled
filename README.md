@@ -21,7 +21,7 @@ ou no desktop em
 ``` sudo nano /boot/firmware/config.txt ```
 
 e alterar esta linha
-``` ```
+``` dtparam=i2c_arm=on ```
 
 por esta 
 ``` dtparam=i2c_arm=on,i2c_arm_baudrate=400000 ```
@@ -30,7 +30,7 @@ por esta
 ``` python3 -m venv RPI-OLED-SH1106 ```
 
 Ativar o "virtual enviroment"
-``` source RPI-OLED-SH1106 ```
+``` source RPI-OLED-SH1106/bin/activate ```
 
 Instalar o lib do oled
 ``` pip3 install --upgrade luma.oled ```
