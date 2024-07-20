@@ -8,6 +8,8 @@ Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a
 Luma Oled Lib: [https://luma-oled.readthedocs.io/en/latest/intro.html]
 
 
+![Esquema de ligações do display ao Raspberry pi 4](https://exemplo.com/logo.png)
+
 Descubrir se o display é detetado
 ```
 i2cdetect -y 1
