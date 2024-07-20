@@ -3,46 +3,68 @@
 ## Experiencias com o OLED SH1106 no raspberry pi!
 Realizado a 20.07.2024 com RPI4 de 4GB e Raspbian OS (64-BIT)
 
-
-
 ![Esquema de ligações do display ao Raspberry pi 4](https://github.com/jagsilva/RaspberryPiOled/blob/main/i2c_oled_128x64_raspberry_pi_wiring.png?raw=true)
 
 ### Ativar a ligação I2C na consola com
- ```sudo raspi-config```
+ ```
+sudo raspi-config
+```
 ou no desktop em
-```Preferences / Raspberry Pi Configuration```
+```
+Preferences / Raspberry Pi Configuration
+```
 
 
 ### Descubrir se o display é detetado
-``` i2cdetect -y 1 ```
+```
+i2cdetect -y 1
+```
 
 
 ### Velocidade da porta I2C
-``` sudo nano /boot/firmware/config.txt ```
+``` 
+sudo nano /boot/firmware/config.txt
+```
 
 e alterar esta linha
-``` dtparam=i2c_arm=on ```
+``` 
+dtparam=i2c_arm=on
+```
 
 por esta 
-``` dtparam=i2c_arm=on,i2c_arm_baudrate=400000 ```
+```
+dtparam=i2c_arm=on,i2c_arm_baudrate=400000
+```
 
 ### Criar o "virtual enviroment"
-``` python3 -m venv RPI-OLED-SH1106 ```
+```
+python3 -m venv RPI-OLED-SH1106
+```
 
 Ativar o "virtual enviroment"
-``` source RPI-OLED-SH1106/bin/activate ```
+```
+source RPI-OLED-SH1106/bin/activate
+```
 
 Instalar o lib do oled
-``` pip3 install --upgrade luma.oled ```
+```
+pip3 install --upgrade luma.oled
+```
 
 Ativar o I2C para o utilizador, neste caso pi
-``` sudo usermod -a -G spi,gpio,i2c pi ```
+```
+sudo usermod -a -G spi,gpio,i2c pi
+```
 
 Aceder à pasta do venv
-``` cd RPI-OLD-SH1106 ```
+```
+cd RPI-OLD-SH1106
+```
 
 Criar um exemplo para o oled
-``` sudo nano olaMundo.py ```
+```
+sudo nano olaMundo.py
+```
 
 Conteudo do ficheiro:
 ```
