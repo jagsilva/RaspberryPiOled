@@ -1,14 +1,17 @@
 # Raspberry Pi 4 com Oled SH1106
 
 ## Experiencias com o OLED SH1106 no raspberry pi!
-Realizado a 20.07.2024 com RPI4 de 4GB e Raspbian OS 64
+Realizado a 20.07.2024 com RPI4 de 4GB e Raspbian OS (64-BIT)
 
 Links uteis:
 Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a-primer/]
+</br>
 Luma Oled Lib: [https://luma-oled.readthedocs.io/en/latest/intro.html]
 
 
 ![Esquema de ligações do display ao Raspberry pi 4]([https://exemplo.com/logo.png](https://github.com/jagsilva/RaspberryPiOled/blob/main/i2c_oled_128x64_raspberry_pi_wiring.png?raw=true))
+
+Ativar a ligação I2C: na consola com "sudo raspi-config".
 
 Descubrir se o display é detetado
 ```
@@ -19,6 +22,12 @@ Velocidade da porta I2C
 ```
 sudo nano /boot/firmware/config.txt
 ```
+
+e alterar esta linha
+```
+```
+
+por esta ``` ```
 
 Criar o "virtual enviroment"
 ```
