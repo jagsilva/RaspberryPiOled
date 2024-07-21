@@ -94,7 +94,10 @@ Executar o script com:
 ```
 sudo python3 olaMundo.py
 ```
-
+Outra forma de executar  script (sem estar no venv)
+```
+/home/pi/RPI-OLED-SH1106/bin/python /home/pi/RPI-OLED-SH1106/olaMundo.py 
+```
 
 Links uteis:  
 Python Virtual enviroment: [https://realpython.com/python-virtual-environments-a-primer/]  
