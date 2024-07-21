@@ -1,4 +1,6 @@
-rom luma.core.interface.serial import i2c
+# -*- coding:UTF-8 -*-
+
+from luma.core.interface.serial import i2c
 from luma.core.render import canvas
 from luma.oled.device import sh1106
 
@@ -19,6 +21,53 @@ device = sh1106(serial)
 device.cleanup = do_nothing
 
 hostname = "RPI4 4GB"
+
+def getHostIp():
+    try:
+        my = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        my.connect(('8.8.8.8', 80))
+        # ip = my.getsockname()[0]
+        ipList = my.getsockname()
+    finally:
+        my.close()
+    return ipList
+
+# Return % of CPU used by user as a character string
+def getCPUuse():
+    return(str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip()))
+
+# Return CPU temperature as a character string
+def getCPUtemperature():
+    res = os.popen('vcgencmd measure_temp').readline()
+    return(res.replace("temp=","").replace("'C\n",""))
+
+def getRAMinfo():
+    p = os.popen('free')
+    i = 0
+    while 1:
+        i = i + 1
+        line = p.readline()
+        if i==2:
+            return(line.split()[1:4])
+
+
+def getDiskSpace():
+    p = os.popen("df -h /")
+    i = 0
+    while 1:
+        i = i +1
+        line = p.readline()
+        if i==2:
+            return(line.split()[1:5])
+
+def ramTotal():
+    return(round(int(getRAMinfo()[0]) / 1000,1))
+
+def ramUsed():
+    return(round(int(getRAMinfo()[1]) / 1000,1))
+
+def ramFree():
+    return(round(int(getRAMinfo()[3]) / 1000,1))
 
 def get_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -122,3 +171,31 @@ bum=psutil.cpu_freq(0)
 #print " Time/Date: " + IGreen + str(datetime.now().strftime('%a %b %d at %H:%M:%S')) + Normal
 print (" Current CPU speed: " + BIRed + "%d" % int(bum.current) + "Mhz" + Normal + "\t" + IGreen + str(datetime.now().strftime('%a %b %d at %H:%M:%S')) + Normal)
 print (IBlue + "____________________________________________________________________________\n" + Normal)
+
+
+
+
+
+
+
+ipaddr = get_ip()
+
+print (ipaddr)
+
+#with canvas(device) as draw:
+#    draw.rectangle(device.bounding_box, fill="black", outline="white")
+#    draw.text((3, 12), hostname, fill="white")
+#    draw.text((3, 22), ipaddr, fill="white")
+
+
+while True:
+       with canvas(device) as draw:
+            draw.rectangle(device.bounding_box, outline="white", fill="black")
+            draw.text((18, 5), "Hshen raspberry" , fill="white")
+            draw.text((2, 14), " CPU: " + getCPUuse() , fill="white")
+            draw.text((62, 14), " Temp: " + getCPUtemperature() , fill="white")
+            draw.text((2, 23), " RAM: " + str(ramUsed()) + "/" + str(ramTotal()) , fill="white")
+            draw.text((2, 33), " Disco: " + str(getDiskSpace()[1]) + " / " + str(getDiskSpace()[0]) , fill="white")
+            draw.text((2, 42), " IP:" + getHostIp()[0] , fill="white")
+            draw.text((2, 52),time.strftime("    %d-%m-%Y %H:%M", time.localtime())  , fill="white")
+       time.sleep(2)
